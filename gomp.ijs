@@ -31,7 +31,7 @@ NB. Derivative Gompertz curve , new cases per day
 NB. ==========================================
 
 dgomp =: monad define
-        >.      a*b*c * exp((-b * exp -c * y)- (c*y))
+             a*b*c * exp((-b * exp -c * y)- (c*y))
 )
 
 NB. ==========================================
@@ -54,7 +54,7 @@ NB. ==========================================
 
 NB. cases=: 1000 2000 3000 4000 5000 6000 7000 8000 7000 5000 4000  4000 3000 2000 1000  NB. testing
 cases =: dgomp n	     	       	    	      	   	NB. Get predicted number of cases
-critical=: <. severe * cases   					NB. Multiple by severity and round
+critical=: >. severe * cases   					NB. Multiple by severity and round
 matrix=: (critical * ((#cases),days) $ 1 ),"1 [ extend $0     	NB. Create matrix
 beds=: +/ (-(i.&#) matrix) |."0 1 matrix      	    NB. Shift each matrix row by its rownumber to the right (ty M. Lochbaum)
 showbeds=: (-(i.&#) matrix) |."0 1 matrix     			NB. Function to visualize th matrix
