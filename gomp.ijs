@@ -39,10 +39,10 @@ NB. Defaults
 NB. ==========================================
 
 
-NB. Assume 1% of cases are critical and need 14 days intensive case
+NB. Assume 10% of cases are critical and need 14 days intensive case
 
 n=:  i. 300   	     	   NB. Investigate 300 days from day one  
-severe=: 0.05         	   NB. patients that need intensive care
+severe=: 0.1        	   NB. patients that need intensive care
 days=: 14                  NB. number of days of intensive care
 extend=: 300       	   NB. Extend days for enough 'space' in the matrix
 
